@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('header-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .profile-pic {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            border: 4px solid white;
+        }
+
+        .intro h1 {
+            font-size: 3em;
+            margin: 20px 0 10px;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        h2 {
+            border-bottom: 2px solid #0073e6;
+            padding-bottom: 10px;
+            color: #0073e6;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        li {
+            background: #0073e6;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        li:hover {
+            background: #005bb5;
+        }
+
+        .project {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+
+        .project h3 {
+            margin: 0;
+            color: #0073e6;
+        }
+
+        .project p {
+            margin: 10px 0;
+        }
+
+        .project a {
+            color: #0073e6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links a {
+            margin-right: 10px;
+            color: #0073e6;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #005bb5;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .project {
+                flex-direction: column;
+                text-align: center;
+            }
+            .project img {
+                margin-bottom: 10px;
+            }
+        }
+
+        .intro::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('blob.svg') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input, form textarea, form button {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            background: #0073e6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #005bb5;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="intro">
+            <img src="download.png" alt="Profile Picture" class="profile-pic">
+            <h1>Ashu Singh</h1>
+            <p>Web Developer | Designer</p>
+        </div>
+    </header>
+    <main>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <!-- Add more skills as needed -->
+            </ul>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <img class="tic" src="tic.png" alt="Project 1">
+                <div>
+                    <h3>Project 1</h3>
+                    <p>Designed the visual elements and layout using HTML and CSS. Developed the game logic and interactive elements using JavaScript.</p>
+                    <a href="https://github.com/Ashusingh20/webd-project">View Project</a>
+                </div>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+        <section id="resume">
+            <h2>Resume</h2>
+            <a href="ashu.pdf" download>Download Resume</a>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form action="submits" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ashu-singh-923503286">LinkedIn</a>
+                <a href="https://github.com/Ashusingh20">GitHub</a>
+                <!-- Add more social links as needed -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Ashu Singh
+    </footer>
+</body>
+</html>
